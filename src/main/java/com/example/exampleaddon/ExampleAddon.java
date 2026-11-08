@@ -3,7 +3,6 @@ package com.example.exampleaddon;
 import com.example.exampleaddon.creativemodetab.AddonCreativeModeTab;
 import com.example.exampleaddon.entity.AddonEntities;
 import com.example.exampleaddon.item.AddonItems;
-import com.fodk.gemcolony.creativemodtab.ModCreativeModeTabs;
 import org.slf4j.Logger;
 import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;

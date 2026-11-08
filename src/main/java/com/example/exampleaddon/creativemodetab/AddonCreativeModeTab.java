@@ -29,6 +29,13 @@ public class AddonCreativeModeTab {
 
                         //output.accept(item) to add more items to your creative tab
                         output.accept(AddonItems.THORIUM_GEM);
+
+                        output.accept(AddonItems.EXAMPLE1_QUARTZ_GEM);
+                        output.accept(AddonItems.EXAMPLE2_QUARTZ_GEM);
+
+                        output.accept(AddonItems.NEON_URANIUM_GEM);
+                        output.accept(AddonItems.MOSS_URANIUM_GEM);
+                        output.accept(AddonItems.VIRIDIAN_URANIUM_GEM);
                     })
                     .build());
 

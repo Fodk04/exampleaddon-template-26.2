@@ -126,9 +126,9 @@ configurations {
 dependencies {
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
-    compileOnly "com.fodk.gemcolony:gemcolony:1.0.0-26.2"
+    compileOnly "com.fodk.gemcolony:gemcolony:1.0.2-26.2"
     compileOnly "com.geckolib:geckolib-neoforge-26.2:5.5.5"
-    localRuntime "com.fodk.gemcolony:gemcolony:1.0.0-26.2"
+    localRuntime "com.fodk.gemcolony:gemcolony:1.0.2-26.2"
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
     // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it

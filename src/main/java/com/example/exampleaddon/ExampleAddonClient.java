@@ -2,6 +2,7 @@ package com.example.exampleaddon;
 
 import com.example.exampleaddon.entity.AddonEntities;
 import com.example.exampleaddon.entity.gem.ThoriumEntity;
+import com.example.exampleaddon.entity.gem.UraniumEntity;
 import com.fodk.gemcolony.GemColony;
 import com.fodk.gemcolony.entity.ModEntities;
 import com.fodk.gemcolony.entity.client.model.GemModel;
@@ -81,5 +82,8 @@ public class ExampleAddonClient {
         // you also need 3 more textures,thorium_eyes, thorium_eyes_whites and thorium_skin, they are in the thorium folder
         // all the textures are already in for this example
         event.registerEntityRenderer(AddonEntities.THORIUM.get(), context -> new GemRenderer(context, new GemModel<ThoriumEntity>(Identifier.fromNamespaceAndPath(ExampleAddon.MOD_ID, "thorium")), "thorium", ExampleAddon.MOD_ID) {});
+
+        //same rendering registration for varying gems
+        event.registerEntityRenderer(AddonEntities.URANIUM.get(), context -> new GemRenderer(context, new GemModel<UraniumEntity>(Identifier.fromNamespaceAndPath(ExampleAddon.MOD_ID, "uranium")), "uranium", ExampleAddon.MOD_ID) {});
     }
 }

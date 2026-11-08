@@ -2,6 +2,7 @@ package com.example.exampleaddon.entity;
 
 import com.example.exampleaddon.ExampleAddon;
 import com.example.exampleaddon.entity.gem.ThoriumEntity;
+import com.example.exampleaddon.entity.gem.UraniumEntity;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -25,6 +26,14 @@ public class AddonEntities {
                     .fireImmune()
                     .immuneTo(BlockTags.STRAY_IMMUNE_TO)
                     .build(getRK("thorium")));
+
+    //uranium is the id of the entity, Mob category is Creature and it's immune to fire and freezing
+    public static final Supplier<EntityType<UraniumEntity>> URANIUM = ENTITY_TYPES.register("uranium",
+            () -> EntityType.Builder.of(UraniumEntity::new, MobCategory.CREATURE)
+                    .sized(0.6f,1.85f)
+                    .fireImmune()
+                    .immuneTo(BlockTags.STRAY_IMMUNE_TO)
+                    .build(getRK("uranium")));
 
     public static void register(IEventBus eventBus){
         ENTITY_TYPES.register(eventBus);

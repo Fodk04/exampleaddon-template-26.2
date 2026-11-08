@@ -3,7 +3,11 @@ package com.example.exampleaddon.event;
 import com.example.exampleaddon.ExampleAddon;
 import com.example.exampleaddon.entity.AddonEntities;
 import com.example.exampleaddon.entity.gem.ThoriumEntity;
+import com.example.exampleaddon.entity.gem.UraniumEntity;
+import com.example.exampleaddon.entity.gem.variant.AddonQuartzVariants;
+import com.example.exampleaddon.entity.gem.variant.UraniumVariants;
 import com.example.exampleaddon.item.AddonItems;
+import com.fodk.gemcolony.entity.custom.gem.variant.QuartzVariants;
 import com.fodk.gemcolony.event.RegisterGemDefinitionsEvent;
 import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -19,6 +23,7 @@ public class AddonEventBusEvents {
     public static void registerAttributes(EntityAttributeCreationEvent event){
         //creating thorium's attributes such as HP / DMG / Speed / Attack speed
         event.put(AddonEntities.THORIUM.get(), ThoriumEntity.createAttributes().build());
+        event.put(AddonEntities.URANIUM.get(), UraniumEntity.createAttributes().build());
     }
 
     @SubscribeEvent
@@ -46,5 +51,23 @@ public class AddonEventBusEvents {
                 List.of(AddonItems.THORIUM_GEM.get()),
                 AddonEntities.THORIUM.get()
         );*/
+
+        //register a varying gem in the same way but add all the gemstones
+        event.RegisterGemDefinitionAndConditions(
+                Identifier.fromNamespaceAndPath(ExampleAddon.MOD_ID, "uranium"),
+                "Uranium",
+                List.of(AddonItems.NEON_URANIUM_GEM.get(),
+                        AddonItems.MOSS_URANIUM_GEM.get(),
+                        AddonItems.VIRIDIAN_URANIUM_GEM.get()),
+                AddonEntities.URANIUM.get(),
+                1.8f, 1f, 0.3f, 0.3f, 1.0f
+        );
+
+
+        //register extra quartz variants
+        AddonQuartzVariants.registerVariants();
+
+        //register uranium gem variants
+        UraniumVariants.registerVariants();
     }
 }

@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 import java.awt.*;
 
+//A GEM SHOULD EXTEND GemEntity
 public class ThoriumEntity extends GemEntity {
 
     private static final Color darkSkin = new Color(174, 9, 124);
@@ -29,32 +30,35 @@ public class ThoriumEntity extends GemEntity {
         super(type, level);
     }
 
+    // ONLY MODIFY THE ATTRIBUTES HERE
+    private static final double MAX_HEALTH = 40D;
+    private static final double MOVEMENT_SPEED = 0.26D;
+    private static final double ATTACK_DAMAGE = 0.0D;
+    private static final double ATTACK_SPEED = 1.4D;
+
     public static AttributeSupplier.Builder createAttributes(){
         return Monster.createMonsterAttributes()
-                .add(Attributes.MAX_HEALTH, 40D)
-                .add(Attributes.MOVEMENT_SPEED, 0.26D)
-                .add(Attributes.ATTACK_DAMAGE, 0.0D)
-                .add(Attributes.ATTACK_SPEED, 1.4D);
+                .add(Attributes.MAX_HEALTH, MAX_HEALTH)
+                .add(Attributes.MOVEMENT_SPEED, MOVEMENT_SPEED)
+                .add(Attributes.ATTACK_DAMAGE, ATTACK_DAMAGE)
+                .add(Attributes.ATTACK_SPEED, ATTACK_SPEED);
     }
 
     @Override
     public double getBaseMaxHealth() {
-        return 40;
+        return MAX_HEALTH;
     }
-
     @Override
     public double getBaseAttackDamage() {
-        return 0;
+        return ATTACK_DAMAGE;
     }
-
     @Override
     public double getBaseMovementSpeed() {
-        return 0.32;
+        return MOVEMENT_SPEED;
     }
-
     @Override
     public double getBaseAttackSpeed() {
-        return 1.4;
+        return ATTACK_SPEED;
     }
 
     @Override

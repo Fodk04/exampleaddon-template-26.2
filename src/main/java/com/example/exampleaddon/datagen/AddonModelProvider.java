@@ -29,6 +29,13 @@ public class AddonModelProvider extends ModelProvider {
     protected void registerModels(BlockModelGenerators blockModels, ItemModelGenerators itemModels){
         //generate the gem item model
         generateGemItem(AddonItems.THORIUM_GEM.get(), itemModels);
+
+        generateGemItem(AddonItems.EXAMPLE1_QUARTZ_GEM.get(), itemModels);
+        generateGemItem(AddonItems.EXAMPLE2_QUARTZ_GEM.get(), itemModels);
+
+        generateGemItem(AddonItems.NEON_URANIUM_GEM.get(), itemModels);
+        generateGemItem(AddonItems.MOSS_URANIUM_GEM.get(), itemModels);
+        generateGemItem(AddonItems.VIRIDIAN_URANIUM_GEM.get(), itemModels);
     }
 
     //a helper method to generate a gem item model and its bubbled variant
